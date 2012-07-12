@@ -22,6 +22,14 @@ end
 
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'formtastic', '2.1'
+gem 'formtastic-bootstrap', :git => 'https://github.com/cgunther/formtastic-bootstrap.git', :branch => 'bootstrap-2'
+
+gem 'bootstrap-sass'
+gem 'decent_exposure'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
