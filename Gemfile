@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'mysql2'
+end
+
+gem 'cloudfoundry-jquery-rails'
 
 
 # Gems used only for assets and not required
@@ -20,11 +28,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 gem 'haml'
 gem 'formtastic', '2.1'
-gem 'formtastic-bootstrap', :git => 'https://github.com/cgunther/formtastic-bootstrap.git', :branch => 'bootstrap-2'
+gem 'formtastic-bootstrap'
 
 gem 'bootstrap-sass'
 gem 'decent_exposure'
