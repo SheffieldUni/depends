@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711155459) do
+ActiveRecord::Schema.define(:version => 20120910120453) do
 
   create_table "nodes", :force => true do |t|
     t.string  "name"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20120711155459) do
   create_table "relationship_nodes", :force => true do |t|
     t.integer "relationship_id"
     t.integer "node_id"
+    t.integer "minimum",         :default => 1
   end
 
   create_table "relationships", :force => true do |t|
     t.integer "node_id"
-    t.integer "minimum"
   end
 
 end
