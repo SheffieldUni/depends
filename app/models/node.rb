@@ -1,8 +1,7 @@
 class Node < ActiveRecord::Base
 
-  has_many :relationships, :dependent => :destroy
-  has_many :dependency_nodes, :through => :relationships, :class_name => 'Node'
-  has_many :relationship_nodes, :dependent => :destroy 
+  has_many :node_relationship_groups
+  has_many :relationship_groups, :through => :node_relationship_groups
 
   scope :available, where(:available => true)
 
@@ -11,7 +10,7 @@ class Node < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
 
   def satisfied?
-    relationships.all? &:satisfied?
+    relationship_groups.all? &:satisfied?
   end
 
   def to_s

@@ -18,13 +18,17 @@ ActiveRecord::Schema.define(:version => 20120910120453) do
     t.boolean "available", :default => true
   end
 
-  create_table "relationship_nodes", :force => true do |t|
-    t.integer "relationship_id"
+  create_table "node_relationship_groups", :force => true do |t|
     t.integer "node_id"
+    t.integer "relationship_group_id"
+  end
+
+  create_table "relationship_groups", :force => true do |t|
     t.integer "minimum",         :default => 1
   end
 
-  create_table "relationships", :force => true do |t|
+  create_table "relationship_nodes", :force => true do |t|
+    t.integer "relationship_group_id"
     t.integer "node_id"
   end
 

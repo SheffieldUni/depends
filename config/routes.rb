@@ -57,5 +57,6 @@ Depends::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   resources :nodes
+  resources :relationship_groups
 
 end
