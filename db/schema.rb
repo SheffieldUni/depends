@@ -11,24 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910120453) do
-
-  create_table "nodes", :force => true do |t|
-    t.string  "name"
-    t.boolean "available", :default => true
-  end
+ActiveRecord::Schema.define(:version => 20120913121649) do
 
   create_table "node_relationship_groups", :force => true do |t|
     t.integer "node_id"
     t.integer "relationship_group_id"
   end
 
+  create_table "nodes", :force => true do |t|
+    t.string  "name"
+    t.boolean "available", :default => true
+  end
+
   create_table "relationship_groups", :force => true do |t|
-    t.integer "minimum",         :default => 1
+    t.integer "minimum", :default => 1
+    t.string  "name",    :default => "Unnamed Relationship Group", :null => false
   end
 
   create_table "relationship_nodes", :force => true do |t|
     t.integer "relationship_group_id"
+    t.integer "node_id"
+  end
+
+  create_table "relationships", :force => true do |t|
     t.integer "node_id"
   end
 

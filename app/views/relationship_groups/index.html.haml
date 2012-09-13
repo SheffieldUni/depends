@@ -1,0 +1,6 @@
+%h1 Relationship Groups
+
+%ul
+  -relationship_groups.each do |relationship_group|
+    %li=link_to_self relationship_group
+=link_to 'New relationship group', new_relationship_group_path, :class => 'btn'
